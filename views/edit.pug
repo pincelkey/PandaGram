@@ -1,0 +1,14 @@
+extends ./layout/app.pug 
+block append styles
+    link(rel="stylesheet", href="/css/add-edit.css")
+block content
+    figure.photo
+        img(src="/img/photos/" + data.src, alt="")
+    - var actionEdit = '/update/' + data.id
+    form.form(action= actionEdit, method="POST")
+        //- recambio de metodo
+        input(type="hidden", name="_method", value="PUT")
+        input.form__input(type="text" name='title' placeholder="Title of the photo")
+        button.form__input.button.button--update Update photo
+
+block scripts

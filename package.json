@@ -1,0 +1,26 @@
+{
+  "name": "api-rest-video",
+  "version": "1.0.0",
+  "description": "plataform where you can upload images",
+  "main": "server.js",
+  "scripts": {
+    "start": "supervisor server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pandagram",
+    "instagram",
+    "images",
+    "upload",
+    "images"
+  ],
+  "author": "Cleiver Valera Flores",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-method-override": "0.0.3",
+    "formidable": "^1.2.1",
+    "mysql": "^2.16.0",
+    "pug": "^2.0.3"
+  }
+}

@@ -1,0 +1,23 @@
+extends ./layout/app.pug 
+block append styles
+    link(rel="stylesheet", href="/css/add-edit.css")
+block content
+    form.form(action="/add", enctype="multipart/form-data", method="POST")
+        input.form__input(type="text", placeholder="Title of the photo", name="title")
+        label.form__input.file 
+            span + Select one photo
+            input#file(type="file", name="file")
+        button.form__input.button.button--upload Upload photo
+
+block scripts
+    script.
+        let file = document.querySelector('#file'),
+            fileLabel = file.parentNode;
+            fileLabelSpan = file.previousSibling;
+
+        file.onchange=()=>{
+
+            let partsOfPath = file.value.split('\\')
+            fileLabelSpan.innerHTML = partsOfPath[partsOfPath.length-1]
+            fileLabel.classList.add('file--loaded')
+        }

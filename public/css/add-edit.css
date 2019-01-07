@@ -1,0 +1,48 @@
+.form__input{
+    padding: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.form__input > input[type='file']{
+    display: none;
+}
+
+.file{
+    display: block;
+    text-align: center;
+    color: #222;
+    font-size: .8em;
+    border: solid 1px grey;
+}
+
+.file--loaded{
+    background: rgb(0, 140, 255);
+    color: #fff;
+    border: solid 1px rgb(0, 140, 255);
+}
+
+.form__input[type='text']{
+    outline: none;
+}
+
+.button--upload,
+.button--update{
+    background: rgb(241, 241, 241);
+    color: #222;
+}
+
+.button--upload:hover{
+    background: rgb(4, 253, 108);
+    color: #222;
+}
+
+.button--update:hover{
+    background: rgb(4, 253, 108);
+    color: #222;
+}
+
+/* Photo */
+.photo > img{
+    width: 100%;
+}

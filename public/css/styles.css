@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app{
+    font-family: 'Montserrat';
+    padding: 10px;
+}
+
+.app__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 2px #222;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.app__header > a{
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+    color: #222;
+    display: block;
+}
+
+.app__title{
+    font-size: 1.5em;
+    text-align: center;
+    color: rgb(108, 3, 245);
+    margin-bottom: 10px;
+}
+
+.button{
+    border: none;
+    outline: none;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+@media(min-width: 1240px){
+    .app{
+        width: 400px;
+        margin: auto;
+    }
+}

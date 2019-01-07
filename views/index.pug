@@ -1,0 +1,40 @@
+extends ./layout/app.pug 
+block append styles
+    link(rel="stylesheet", href="/css/index.css")
+
+block content
+    a.link.link--add(href="/add") + Add a new photo
+    if (data.length!=0)
+        each photo in data
+            div.post(onmouseover='showActions(this)', onmouseout='hiddenActions(this)')
+                div#post__actions.post__actions.post__actions--hidden
+                    - var actionEdit = '/edit/'+photo.id
+                    form(action= actionEdit method="GET")
+                        button.button.button--edit Edit
+                    - var actionDelete = '/delete/'+photo.id+'/'+photo.src
+                    form(action= actionDelete method="POST")
+                        input(type="hidden", name="_method", value="DELETE")
+                        button.button.button--delete(onclick='deletePost(this)') Delete
+                figure.post__photo
+                    img(src="/img/photos/"+photo.src)
+                figcaption.post__title= photo.title
+
+    else
+        //- div.message No photos 😭 
+        <iframe width="100%" height="300" src="https://player.vimeo.com/video/306898492" frameborder="0" allowFullScreen mozallowfullscreen webkitAllowFullScreen></iframe>
+block scripts
+    script.
+        function showActions(post){
+            post.children[0].classList.remove('post__actions--hidden')
+        }
+
+        function hiddenActions(post){
+            post.children[0].classList.add('post__actions--hidden')
+        }
+
+        function deletePost(post){
+            event.preventDefault()
+
+            let answer = confirm('are you sure deleting this post?')
+            return (answer) ? post.parentNode.submit() : false
+        }
