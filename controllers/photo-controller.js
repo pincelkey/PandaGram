@@ -14,6 +14,9 @@ class PhotoController{
                 title: 'Inicio',
                 data: rows
             }
+
+            if(err) throw err
+            
             res.render('index',locals)            
         })
     }

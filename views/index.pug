@@ -4,7 +4,7 @@ block append styles
 
 block content
     a.link.link--add(href="/add") + Add a new photo
-    if (data.length!=0)
+    if (data.length != 0)
         each photo in data
             div.post(onmouseover='showActions(this)', onmouseout='hiddenActions(this)')
                 div#post__actions.post__actions.post__actions--hidden
@@ -20,8 +20,8 @@ block content
                 figcaption.post__title= photo.title
 
     else
-        //- div.message No photos 😭 
-        <iframe width="100%" height="300" src="https://player.vimeo.com/video/306898492" frameborder="0" allowFullScreen mozallowfullscreen webkitAllowFullScreen></iframe>
+        div.message No photos 😭 
+        
 block scripts
     script.
         function showActions(post){
